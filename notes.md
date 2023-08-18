@@ -1,0 +1,3 @@
+- Used Library
+    - Tailwind
+    - Fontawesome
