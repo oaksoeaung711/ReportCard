@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $users = User::with('permissions')->paginate(10);
+        return view('users.index',compact('users'));
     }
 
     /**
@@ -44,7 +44,12 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        if(Auth::user()->id != $user->id && empty($user->permissions->find(1))){
+            $permissions = Permission::all();
+            return view('users.edit',compact('permissions','user'));
+        }else{
+            return redirect()->route('users.index');
+        }
     }
 
     /**
@@ -52,14 +57,20 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $permissions = Permission::all();
+        foreach($permissions as $permission){
+            if($request->has($permission->id) && empty($user->permissions->find($permission->id))){
+                $user->permissions()->attach($permission->id);
+            }elseif(!$request->has($permission->id)){
+                $user->permissions()->detach($permission->id);
+            }
+        }
+        return redirect()->route('users.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('users.index');
     }
 }

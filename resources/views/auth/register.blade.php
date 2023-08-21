@@ -25,7 +25,7 @@
     <div class="h-screen flex items-center justify-center">
         <div class="bg-gray-50 text-gray-500 rounded-xl shadow-2xl overflow-hidden flex" style="max-width: 1000px;">
             <div class="w-1/2 hidden md:block pt-60">
-                <img src="{{ asset('images/register.svg') }}" class="" alt="register" />
+                <img src="{{ asset('images/park.svg') }}" class="" alt="register" />
             </div>
 
             <div class="w-full md:w-1/2 px-5 py-10">

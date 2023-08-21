@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,8 @@ Route::middleware('auth','isverified')->group(function(){
     Route::view('/','home')->name('home');
 
     Route::get('/logout',[AuthController::class,'logout'])->name('user.logout');
+
+    Route::resource('/users',UserController::class)->middleware('checkpermissions');
 });
 
 Route::view('/login','auth.login')->name('login');
