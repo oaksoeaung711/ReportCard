@@ -46,14 +46,14 @@
             </div>
         @elseif($permission->id == 2)
             <div id="sign-manage" class="flex items-center h-12 p-3 my-3 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
-                <a href="#" class="block w-full text-lg text-gray-700">
+                <a href="{{ route('signs.index') }}" class="block w-full text-lg text-gray-700">
                     <i class="fa-solid fa-sign-hanging"></i>
                     <span class="ml-5">{{ $permission->name }}</span>
                 </a>
             </div>
         @elseif($permission->id == 3)
             <div id="create-reportcards" class="flex items-center h-12 p-3 my-3 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
-                <a href="#" class="block w-full text-lg text-gray-700">
+                <a href="{{ route('reportcards.index') }}" class="block w-full text-lg text-gray-700">
                     <i class="fa-solid fa-clipboard"></i>
                     <span class="ml-5">{{ $permission->name }}</span>
                 </a>
@@ -86,5 +86,13 @@
 @elseif(request()->routeIs('users.*'))
 <script type="text/javascript">
     document.getElementById('user-manage').classList.add('bg-gray-200','rounded-md');
+</script>
+@elseif(request()->routeIs('signs.*'))
+<script type="text/javascript">
+    document.getElementById('sign-manage').classList.add('bg-gray-200','rounded-md');
+</script>
+@elseif(request()->routeIs('reportcards.*'))
+<script type="text/javascript">
+    document.getElementById('create-reportcards').classList.add('bg-gray-200','rounded-md');
 </script>
 @endif

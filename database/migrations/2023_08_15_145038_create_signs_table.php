@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('signs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('keyword');
+            $table->string('keyword')->unique();
             $table->string('path');
             $table->timestamps();
         });

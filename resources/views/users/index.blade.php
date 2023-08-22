@@ -43,6 +43,7 @@
                                 @if (Auth::user()->id != $user->id && empty($user->permissions->find(1)))
                                     <div class="flex gap-5">
                                         <a href="{{ route('users.edit',$user->id) }}" class="text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        
                                         <button id="delete-btn" onclick="deleteuser({{ $user->id }},`{{ $user->name }}`)" class="text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-trash"></i></button>
                                     </div>
                                 @endif
@@ -51,6 +52,10 @@
                     @endforeach
                 </tbody>
             </table>
+        </div>
+
+        <div class="mt-5">
+            {{ $users->links('pagination::tailwind') }}
         </div>
 
         {{-- Start Confirm Modal --}}

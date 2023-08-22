@@ -14,8 +14,9 @@ class FormComponent extends Component
     public $formicon;
     public $formname;
     public $formplaceholder;
+    public $formvalue;
 
-    public function __construct($formid,$formlabel,$formtype,$formicon,$formname,$formplaceholder="")
+    public function __construct($formid,$formlabel,$formtype,$formicon,$formname,$formplaceholder="",$formvalue="")
     {
         $this->formid = $formid;
         $this->formlabel = $formlabel;
@@ -23,6 +24,7 @@ class FormComponent extends Component
         $this->formicon = $formicon;
         $this->formname = $formname;
         $this->formplaceholder = $formplaceholder;
+        $this->formvalue = $formvalue;
     }
 
     /**

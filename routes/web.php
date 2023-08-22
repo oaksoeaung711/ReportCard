@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReportcardController;
+use App\Http\Controllers\SignController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,13 @@ Route::middleware('auth','isverified')->group(function(){
     Route::get('/logout',[AuthController::class,'logout'])->name('user.logout');
 
     Route::resource('/users',UserController::class)->middleware('checkpermissions');
+    Route::resource('/signs',SignController::class)->middleware('checkpermissions');
+    
+    Route::middleware('checkpermissions')->group(function(){
+        Route::get('/reportcards',[ReportcardController::class,'index'])->name('reportcards.index');
+        Route::get('/reportcards/{place}/uploadmarks/{type}',[ReportcardController::class,'uploadmarks'])->name('reportcards.uploadmarks');
+        Route::post('/reportcards/uploadmarks',[ReportcardController::class,'marks'])->name('reportcards.marks');
+    });
 });
 
 Route::view('/login','auth.login')->name('login');

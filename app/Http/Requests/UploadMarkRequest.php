@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
-class UpdateSignRequest extends FormRequest
+class UploadMarkRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,17 +23,7 @@ class UpdateSignRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'keyword' => 'required|regex:/^\S*$/u',
-            'signimage' => 'image|mimes:png'
-        ];
-    }
-
-    public function messages(): array
-    {
-        return [
-            'keyword.regex' => "Keyword can't contain white space.",
-            'signimage.mimes' => 'The image field must be a file of type: png.',
+            'marks' => 'file|mimes:csv,txt',
         ];
     }
 }

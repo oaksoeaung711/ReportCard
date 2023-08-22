@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreSignRequest;
 use App\Http\Requests\UpdateSignRequest;
 use App\Models\Sign;
+use Illuminate\Support\Facades\Storage;
 
 class SignController extends Controller
 {
@@ -13,7 +14,8 @@ class SignController extends Controller
      */
     public function index()
     {
-        //
+        $signs = Sign::paginate(10);
+        return view('signs.index',compact('signs'));
     }
 
     /**
@@ -21,7 +23,7 @@ class SignController extends Controller
      */
     public function create()
     {
-        //
+        return view('signs.create');
     }
 
     /**
@@ -29,7 +31,18 @@ class SignController extends Controller
      */
     public function store(StoreSignRequest $request)
     {
-        //
+        if(empty(Sign::where('keyword',$request->keyword)->first())){
+            $imagepath = $request->file('signimage')->store('signimages');
+            Sign::create([
+                'name' => $request->name,
+                'keyword' => strtolower($request->keyword),
+                'path' => $imagepath,
+            ]);
+            return redirect()->route('signs.index')->with('message',['type'=>'success','content'=>"$request->name's sign is uploaded successfully"]);
+        }else{
+            return redirect()->route('signs.index')->with('message',['type'=>'fail','content'=>"Keyword cannot be same. Please check keyword first"]);
+        }
+
     }
 
     /**
@@ -37,7 +50,7 @@ class SignController extends Controller
      */
     public function show(Sign $sign)
     {
-        //
+        return view('signs.show',compact('sign'));
     }
 
     /**
@@ -45,7 +58,7 @@ class SignController extends Controller
      */
     public function edit(Sign $sign)
     {
-        //
+        return view('signs.edit',compact('sign'));
     }
 
     /**
@@ -53,7 +66,19 @@ class SignController extends Controller
      */
     public function update(UpdateSignRequest $request, Sign $sign)
     {
-        //
+        if($request->has('signimage')){
+            Storage::disk('sign')->delete($sign->path);
+            $imagepath = $request->file('signimage')->store('signimages');
+            $sign->update([
+                'path' => $imagepath,
+            ]);
+        }
+
+        $sign->update([
+            'name' => $request->name,
+            'keyword' => $request->keyword,
+        ]);
+        return redirect()->route('signs.index');
     }
 
     /**
@@ -61,6 +86,10 @@ class SignController extends Controller
      */
     public function destroy(Sign $sign)
     {
-        //
+
+        Storage::disk('sign')->delete($sign->path);
+        echo "Success";
+        $sign->delete();
+        return redirect()->route('signs.index')->with('message',['type'=>'success','content'=>"$sign->name's sign is deleted successfully"]);
     }
 }
