@@ -17,7 +17,7 @@
                 </div>
     
                 <div class="flex items-center">
-                    <a href="" class="shadow w-full h-20 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-xl text-gray-500">50 Marks</a>
+                    <a href="{{ route('reportcards.uploadmarks',['preuni','50marks']) }}" class="shadow w-full h-20 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-xl text-gray-500">50 Marks</a>
                 </div>
             </div>
 
@@ -29,11 +29,11 @@
 
             <div class="space-y-5 my-5">
                 <div class="flex items-center">
-                    <a href="" class="shadow w-full h-20 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-xl text-gray-500">Cambridge</a>
+                    <a href="{{ route('reportcards.uploadmarks',['is','cambridge']) }}" class="shadow w-full h-20 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-xl text-gray-500">Cambridge</a>
                 </div>
     
                 <div class="flex items-center">
-                    <a href="" class="shadow w-full h-20 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-xl text-gray-500">Government</a>
+                    <a href="{{ route('reportcards.uploadmarks',['is','government']) }}" class="shadow w-full h-20 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-xl text-gray-500">Government</a>
                 </div>
 
                 <div class="flex items-center">

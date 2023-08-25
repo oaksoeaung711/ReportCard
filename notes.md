@@ -1,3 +1,5 @@
 - Used Library
     - Tailwind
     - Fontawesome
+    - #000733
+    - #009649
