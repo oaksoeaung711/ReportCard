@@ -30,7 +30,7 @@
             $months = [];
             $behaviour = [];
             $grades = ['A', 'B', 'C', 'D', 'E'];
-            foreach($informations as $infokey => $infovalue){
+            foreach($informations as $infokey => $infovalue){ ===
                 $explodedinfokey = explode('.',$infokey);
                 if(count($explodedinfokey) == 2) {
                     if($explodedinfokey[0] == 'Subject'){

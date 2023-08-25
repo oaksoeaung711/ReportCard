@@ -1,5 +1,6 @@
 - Used Library
     - Tailwind
     - Fontawesome
-    - #000733
-    - #009649
+    - #000733 = preuni
+    - #009649 = green
+    - #00223d = is
