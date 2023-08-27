@@ -1,61 +1,61 @@
 <div>
-    <a href="{{ route('home') }}" class="flex items-center mb-14">
-        <img src="{{ asset('images/logo.png') }}" class="w-14" />
-        <h1 class="text-4xl text-gray-700 font-bold">Reportcard</h1>
+    <a href="{{ route('home') }}" class="flex items-center mb-10">
+        <img src="{{ asset('images/logo.png') }}" class="h-10" />
+        <h1 class="text-xl text-gray-700 font-bold">Reportcard</h1>
     </a>
 </div>
 
-<div class="space-y-7">
+<div class="space-y-4">
     <div class="flex items-center gap-3">
-        <img src="{{ asset('images/user.png') }}" class="w-12" />
+        <img src="{{ asset('images/user.png') }}" class="h-10" />
         <div class="space-y-1">
-            <p class="font-bold text-gray-700">{{ Auth::user()->name }}</p>
-            <p class="text-sm text-gray-400">{{ Auth::user()->email }}</p>
+            <p class="font-bold text-sm text-gray-700">{{ Auth::user()->name }}</p>
+            <p class="text-xs text-gray-400">{{ Auth::user()->email }}</p>
         </div>
     </div>
     <div class="flex items-center flex-wrap gap-1">
-        <span class="text-gray-700">Permission : </span>
+        <span class="text-gray-700 text-sm">Permission : </span>
         @foreach(auth()->user()->permissions as $permission)
             @if($permission->id == 1)
-                <span class="px-1.5 py-0.5 bg-rose-300 rounded-full text-xs text-rose-700 tracking-tighter">{{ $permission->name }}</span>
+                <span class="px-1 bg-rose-300 rounded-full text-[9px] text-rose-700 tracking-tighter">{{ $permission->name }}</span>
             @elseif($permission->id == 2)
-                <span class="px-1.5 py-0.5 bg-yellow-300 rounded-full text-xs text-yellow-700 tracking-tighter">{{ $permission->name }}</span>
+                <span class="px-1 bg-yellow-300 rounded-full text-[9px] text-xs text-yellow-700 tracking-tighter">{{ $permission->name }}</span>
             @elseif($permission->id == 3)
-                <span class="px-1.5 py-0.5 bg-sky-300 rounded-full text-xs text-sky-700 tracking-tighter">{{ $permission->name }}</span>
+                <span class="px-1 bg-sky-300 rounded-full text-[9px] text-sky-700 tracking-tighter">{{ $permission->name }}</span>
             @endif
         @endforeach
     </div>
 </div>
 
-<hr class="border-gray-300 mt-6 mb-12" />
+<hr class="border-gray-300 my-6" />
 
 <div>
     <div id="home" class="flex items-center h-12 p-3 my-3 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
-        <a href="{{ route('home') }}" class="block w-full text-lg text-gray-700">
+        <a href="{{ route('home') }}" class="block w-full text-sm text-gray-700">
             <i class="fa-solid fa-house-chimney"></i>
-            <span class="ml-5">Home</span>
+            <span class="ml-3">Home</span>
         </a>
     </div>
     @foreach(auth()->user()->permissions as $permission)
         @if($permission->id == 1)
-            <div id="user-manage" class="flex items-center h-12 p-3 my-3 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
-                <a href="{{ route('users.index') }}" class="block w-full text-lg text-gray-700">
+            <div id="user-manage" class="flex items-center h-12 p-3 my-2 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
+                <a href="{{ route('users.index') }}" class="block w-full text-sm text-gray-700">
                     <i class="fa-solid fa-users-gear"></i>
-                    <span class="ml-5">{{ $permission->name }}</span>
+                    <span class="ml-3">{{ $permission->name }}</span>
                 </a>
             </div>
         @elseif($permission->id == 2)
-            <div id="sign-manage" class="flex items-center h-12 p-3 my-3 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
-                <a href="{{ route('signs.index') }}" class="block w-full text-lg text-gray-700">
+            <div id="sign-manage" class="flex items-center h-12 p-3 my-2 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
+                <a href="{{ route('signs.index') }}" class="block w-full text-sm text-gray-700">
                     <i class="fa-solid fa-sign-hanging"></i>
-                    <span class="ml-5">{{ $permission->name }}</span>
+                    <span class="ml-3">{{ $permission->name }}</span>
                 </a>
             </div>
         @elseif($permission->id == 3)
-            <div id="create-reportcards" class="flex items-center h-12 p-3 my-3 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
-                <a href="{{ route('reportcards.index') }}" class="block w-full text-lg text-gray-700">
+            <div id="create-reportcards" class="flex items-center h-12 p-3 my-2 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
+                <a href="{{ route('reportcards.index') }}" class="block w-full text-sm text-gray-700">
                     <i class="fa-solid fa-clipboard"></i>
-                    <span class="ml-5">{{ $permission->name }}</span>
+                    <span class="ml-3">{{ $permission->name }}</span>
                 </a>
             </div>
         @endif
@@ -65,10 +65,10 @@
 <hr class="border-gray-300 my-6" />
 
 <div>
-    <div class="flex items-center h-12 p-3 my-3">
-        <a href="{{ route('user.logout') }}" class="block w-full text-lg text-gray-700 hover:text-gray-900 transition-all duration-200">
+    <div class="flex items-center h-12 p-3 my-2">
+        <a href="{{ route('user.logout') }}" class="block w-full text-sm text-gray-700 hover:text-gray-900 transition-all duration-200">
             <i class="fa-solid fa-right-from-bracket"></i>
-            <span class="ml-5">Logout</span>
+            <span class="ml-3">Logout</span>
         </a>
     </div>
 </div>

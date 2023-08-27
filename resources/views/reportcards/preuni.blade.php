@@ -44,7 +44,7 @@
             }
         @endphp
         <div class="[width:21cm] [min-height:29.7cm] p-[12px] my-[20px] mx-auto bg-no-repeat bg-[length:100%_auto] bg-center border border-gray-300 rounded-md shadow-md print:m-0 print:border-none print:rounded-none print:break-after-page print:shadow-none grid grid-rows-6" style="background-image: url({{ asset('images/backgrounds/preuni_rcbg.png') }})">
-            <div class="row-start-2 row-span-4 rc-body grid grid-cols-3 gap-y-3">
+            <div class="row-start-2 row-span-4 rc-body grid grid-cols-3 gap-y-3 text-sm">
                 <div class="col-span-3">
                     <div class="grid grid-cols-3 gap-y-2 mt-3">
                         <p class=""><span class="font-extrabold">Name : </span><span>{{ $name }}</span></p>
@@ -194,7 +194,7 @@
         </div>
 
         <div class="[width:21cm] [min-height:29.7cm] p-[12px] my-[20px] mx-auto border border-gray-300 rounded-md shadow-md print:m-0 print:border-none print:rounded-none print:break-after-page print:shadow-none">
-            <div>
+            <div class="text-sm">
                 <table class="w-full">
                     <thead style="background-color: #000733">
                         <tr class="">
@@ -212,7 +212,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="mt-4">
+            <div class="mt-4 text-sm">
                 <table class="w-full">
                     <thead style="background-color: #000733">
                         <tr class="">
@@ -239,10 +239,10 @@
                     </tbody>
                 </table>
             </div>
-            <div class="flex justify-end mt-4 font-bold">
+            <div class="flex justify-end mt-4 font-bold text-sm">
                 <div>
-                    <p class="my-2">Class Teacher's Sign</p>
-                    <img src="{{ asset($signs->where('keyword',$informations['Class Teacher Sign'])->first()->path) }}" class=" h-24 mx-auto" />
+                    <p class="my-2 text-xs">Class Teacher's Sign</p>
+                    <img src="{{ asset($signs->where('keyword',$informations['Class Teacher Sign'])->first()->path) }}" class=" h-20 mx-auto" />
                 </div>
             </div>
         </div>

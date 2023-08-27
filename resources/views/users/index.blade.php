@@ -5,46 +5,46 @@
 @section('content')
     <section class="relative">
         <div class="">
-            <h1 class="text-3xl text-gray-700 font-bold">User Management</h1>
+            <h1 class="text-xl text-gray-700 font-bold">User Management</h1>
         </div>
-        <div class="mt-10 rounded-t-lg overflow-hidden">
+        <div class="mt-5 rounded-t-lg overflow-hidden">
             <table class="w-full">
                 <thead class="bg-gray-500">
                     <tr>
-                        <td class="w-1/4 p-3 text-white font-semibold">Name</td>
-                        <td class="w-1/4 p-3 text-white font-semibold">Email</td>
-                        <td class="w-1/4 p-3 text-white font-semibold">Permissions</td>
-                        <td class="w-1/4 p-3 text-white font-semibold">Action</td>
+                        <td class="w-1/4 p-3 text-xs text-white font-semibold">Name</td>
+                        <td class="w-1/4 p-3 text-xs text-white font-semibold">Email</td>
+                        <td class="w-1/4 p-3 text-xs text-white font-semibold">Permissions</td>
+                        <td class="w-1/4 p-3 text-xs text-white font-semibold">Action</td>
                     </tr>
                 </thead>
                 <tbody class="bg-gray-100">
                     @foreach ($users as $user)
                         <tr>
-                            <td class="p-3 text-gray-700">{{ $user->name }}</td>
-                            <td class="p-3 text-gray-700">{{ $user->email }}</td>
-                            <td class="p-3 text-gray-700">
+                            <td class="p-3 text-xs text-gray-700">{{ $user->name }}</td>
+                            <td class="p-3 text-xs text-gray-700">{{ $user->email }}</td>
+                            <td class="p-3 text-xs text-gray-700">
                                 <div class="flex gap-1 items-center flex-wrap">
                                     @if(count($user->permissions) != 0)
                                         @foreach ($user->permissions as $permission)
                                             @if($permission->id == 1)
-                                                <span class="px-1.5 py-0.5 bg-rose-300 rounded-full text-xs text-rose-700 tracking-tighter">{{ $permission->name }}</span>
+                                                <span class="px-1 bg-rose-300 rounded-full text-[9px] text-rose-700 tracking-tighter">{{ $permission->name }}</span>
                                             @elseif($permission->id == 2)
-                                                <span class="px-1.5 py-0.5 bg-yellow-300 rounded-full text-xs text-yellow-700 tracking-tighter">{{ $permission->name }}</span>
+                                                <span class="px-1 bg-yellow-300 rounded-full text-[9px] text-yellow-700 tracking-tighter">{{ $permission->name }}</span>
                                             @elseif($permission->id == 3)
-                                                <span class="px-1.5 py-0.5 bg-sky-300 rounded-full text-xs text-sky-700 tracking-tighter">{{ $permission->name }}</span>
+                                                <span class="px-1 bg-sky-300 rounded-full text-[9px] text-sky-700 tracking-tighter">{{ $permission->name }}</span>
                                             @endif
                                         @endforeach
                                     @else
-                                        <span class="px-1.5 py-0.5 bg-gray-300 rounded-full text-xs text-gray-700 tracking-tighter">None</span>
+                                        <span class="px-1 bg-gray-300 rounded-full text-[9px] text-gray-700 tracking-tighter">None</span>
                                     @endif
                                 </div>
                             </td>
                             <td class="p-3">
                                 @if (Auth::user()->id != $user->id && empty($user->permissions->find(1)))
                                     <div class="flex gap-5">
-                                        <a href="{{ route('users.edit',$user->id) }}" class="text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{{ route('users.edit',$user->id) }}" class="text-xs text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-pen-to-square"></i></a>
                                         
-                                        <button id="delete-btn" onclick="deleteuser({{ $user->id }},`{{ $user->name }}`)" class="text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-trash"></i></button>
+                                        <button id="delete-btn" onclick="deleteuser({{ $user->id }},`{{ $user->name }}`)" class="text-xs text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-trash"></i></button>
                                     </div>
                                 @endif
                             </td>

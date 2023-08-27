@@ -23,14 +23,14 @@
 </head>
 <body>
     <div class="h-screen flex items-center justify-center">
-        <div class="bg-gray-50 text-gray-500 rounded-xl shadow-2xl overflow-hidden flex" style="max-width: 1000px;">
-            <div class="w-1/2 hidden md:block pt-20">
+        <div class="bg-gray-50 text-gray-500 rounded-xl shadow-2xl overflow-hidden flex max-w-5xl">
+            <div class="w-1/2 hidden md:block pt-10">
                 <img src="{{ asset('images/park.svg') }}" class="" alt="register" />
             </div>
 
-            <div class="w-full md:w-1/2 px-5 py-10">
-                <div class="text-center mb-10">
-                    <h1 class="font-bold text-3xl text-gray-700 tracking-wide">USER REGISTRATION</h1>
+            <div class="w-full md:w-1/2 px-5 py-5">
+                <div class="text-center mb-5">
+                    <h1 class="font-bold text-xl text-gray-700 tracking-wide">USER REGISTRATION</h1>
                 </div>
                 <x-session-message/>
                 <div>
@@ -45,13 +45,13 @@
 
                         </div>
 
-                        <div class="">
-                            <button type="submit" class="w-full bg-gray-500 text-white font-semibold py-3 rounded-md uppercase hover:bg-gray-600">Register</button>
+                        <div class="mt-5">
+                            <button type="submit" class="w-full bg-gray-500 text-xs text-white font-semibold py-2 rounded-sm uppercase hover:bg-gray-600">Register</button>
                         </div>
                     </form>
                 </div>
-                <div class="text-center mt-6">
-                    <p>Already have an account? Login <a href="{{ route('login') }}" class="text-gray-800">Here !</a></p>
+                <div class="text-center mt-3">
+                    <p class="text-xs">Already have an account? Login <a href="{{ route('login') }}" class="text-gray-800">Here !</a></p>
                 </div>
             </div>
         </div>

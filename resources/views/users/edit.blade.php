@@ -5,13 +5,13 @@
 @section('content')
     <section class="">
         <div class="">
-            <h1 class="text-3xl text-gray-700 font-bold">Edit Permissions For {{ $user->name }}</h1>
+            <h1 class="text-xl text-gray-700 font-bold">Edit Permissions For {{ $user->name }}</h1>
         </div>
-        <div class="mt-10 w-1/2 rounded-t-lg overflow-hidden">
+        <div class="mt-5 w-1/2 rounded-t-lg overflow-hidden">
             <table class="w-full">
                 <thead class="bg-gray-500">
                     <tr>
-                        <td colspan="2" class="w-1/4 p-3 text-white font-semibold">Permissions</td>
+                        <td colspan="2" class="w-1/4 p-3 text-xs text-white font-semibold">Permissions</td>
                     </tr>
                 </thead>
                 <tbody class="bg-gray-100">
@@ -20,7 +20,7 @@
                     @method('PUT')
                     @foreach ($permissions as $permission)
                         <tr>
-                            <td class="p-3 text-gray-700">{{ $permission->name }}</td>
+                            <td class="p-3 text-xs text-gray-700">{{ $permission->name }}</td>
                             <td>
                                 <label class="relative inline-flex items-center mr-5 cursor-pointer">
                                     <input type="checkbox" name="{{ $permission->id }}" class="sr-only peer"
@@ -41,8 +41,8 @@
             </table>
         </div>
         <div class="w-1/2 mt-5 flex justify-end gap-3">
-            <a href="{{ route('users.index') }}" class="w-24 py-3 border border-gray-500 rounded-md text-center text-gray-700">Cancle</a>
-            <button form="permission" class="w-24 py-3 bg-gray-500 rounded-md text-center text-white">Save</button>
+            <a href="{{ route('users.index') }}" class="w-24 py-2 border border-gray-500 rounded-md text-xs text-center text-gray-700">Cancle</a>
+            <button form="permission" class="w-24 py-2 bg-gray-500 rounded-md text-center text-xs text-white">Save</button>
         </div>
     </section>
 @endsection

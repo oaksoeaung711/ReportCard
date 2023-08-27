@@ -5,10 +5,10 @@
 @section('content')
     <section class="relative">
         <div class="">
-            <h1 class="text-3xl text-gray-700 font-bold">Edit Sign</h1>
+            <h1 class="text-xl text-gray-700 font-bold">Edit Sign</h1>
         </div>
 
-        <div class="mt-10 w-1/3 p-5 shadow-lg rounded-lg">
+        <div class="mt-5 w-1/3 p-5 shadow-lg rounded-lg">
             <form action="{{ route('signs.update',$sign->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -34,8 +34,8 @@
                 @enderror
 
                 <div class="flex justify-end gap-2 mt-5">
-                    <a href="{{ route('signs.index') }}" class="px-4 py-3 border border-gray-500 text-gray-500 rounded-md">Cancle</a>
-                    <button class="px-4 py-3 bg-gray-500 text-white rounded-md">Upload</button>
+                    <a href="{{ route('signs.index') }}" class="px-4 py-2 border border-gray-500 text-xs text-gray-500 rounded-md">Cancle</a>
+                    <button class="px-4 py-2 bg-gray-500 text-xs text-white rounded-md">Upload</button>
                 </div>
             </form>
         </div>

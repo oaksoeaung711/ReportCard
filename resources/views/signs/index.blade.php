@@ -5,33 +5,33 @@
 @section('content')
     <section class="relative">
         <div class="">
-            <h1 class="text-3xl text-gray-700 font-bold">Sign Management</h1>
+            <h1 class="text-xl text-gray-700 font-bold">Sign Management</h1>
         </div>
-        <div class="mt-10 w-1/2 flex justify-end">
-            <a href="{{ route('signs.create') }}" class="bg-gray-500 px-4 py-3 rounded-md text-white"><i class="fa-solid fa-plus"></i> Create New</a>
+        <div class="mt-5 w-1/2 flex justify-end">
+            <a href="{{ route('signs.create') }}" class="bg-gray-500 px-4 py-2 rounded-md text-xs text-white"><i class="fa-solid fa-plus"></i> Create New</a>
         </div>
         <div class="w-1/5 absolute top-5 right-5">
             <x-session-message/>
         </div>
-        <div class="mt-10 w-1/2 rounded-t-lg overflow-hidden">
+        <div class="mt-5 w-1/2 rounded-t-lg overflow-hidden">
             <table class="w-full">
                 <thead class="bg-gray-500">
                     <tr>
-                        <td class="w-1/4 p-3 text-white font-semibold">Name</td>
-                        <td class="w-1/4 p-3 text-white font-semibold">Keyword</td>
-                        <td class="w-1/4 p-3 text-white font-semibold">Action</td>
+                        <td class="w-1/4 p-3 text-xs text-white font-semibold">Name</td>
+                        <td class="w-1/4 p-3 text-xs text-white font-semibold">Keyword</td>
+                        <td class="w-1/4 p-3 text-xs text-white font-semibold">Action</td>
                     </tr>
                 </thead>
                 <tbody class="bg-gray-100">
                     @foreach ($signs as $sign)
                         <tr>
-                            <td class="p-3 text-gray-700">{{ $sign->name }}</td>
-                            <td class="p-3 text-gray-700">{{ $sign->keyword }}</td>
+                            <td class="p-3 text-xs text-gray-700">{{ $sign->name }}</td>
+                            <td class="p-3 text-xs text-gray-700">{{ $sign->keyword }}</td>
                             <td class="p-3">
                                 <div class="flex gap-4 items-center">
-                                    <a href="{{ route('signs.show',$sign->id) }}" class="text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-eye"></i></a>
-                                    <a href="{{ route('signs.edit',$sign->id) }}" class="text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <button id="delete-btn" onclick="deletesign({{ $sign->id }},`{{ $sign->name }}`)" class="text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-trash"></i></button>
+                                    <a href="{{ route('signs.show',$sign->id) }}" class="text-xs text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="{{ route('signs.edit',$sign->id) }}" class="text-xs text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <button id="delete-btn" onclick="deletesign({{ $sign->id }},`{{ $sign->name }}`)" class="text-xs text-gray-600 hover:text-gray-700 transition-all duration-300"><i class="fa-solid fa-trash"></i></button>
                                 </div>
                             </td>
                         </tr>

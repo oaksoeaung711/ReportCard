@@ -28,7 +28,7 @@
         <aside class="col-span-2 h-screen p-3 shadow-lg relative">
             @include('layouts.nav')
         </aside>
-        <div class="col-span-10 h-screen px-10 py-5 overflow-y-auto">
+        <div class="col-span-10 h-screen px-8 py-4 overflow-y-auto">
             @yield('content')
         </div>
     </div>

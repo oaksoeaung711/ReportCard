@@ -39,7 +39,7 @@
             $mark_count = 0;
             $grades = ['A', 'B', 'C', 'D', 'E'];
             $b_grades = ['5', '4', '3', '2', '1'];
-            dd($informations);
+            // dd($informations);
             foreach($informations as $infokey => $infovalue){
                 $explodedinfokey = explode('.',$infokey);
                 if(count($explodedinfokey) == 2) {
