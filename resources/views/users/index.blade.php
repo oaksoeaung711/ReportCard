@@ -37,6 +37,9 @@
                                     @else
                                         <span class="px-1 bg-gray-300 rounded-full text-[9px] text-gray-700 tracking-tighter">None</span>
                                     @endif
+                                    @if($user->is_verified == 0)
+                                        <span class="px-1 bg-purple-300 rounded-full text-[9px] text-purple-700 tracking-tighter">Not Verified</span>
+                                    @endif
                                 </div>
                             </td>
                             <td class="p-3">

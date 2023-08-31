@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\IsKBTCMail;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
@@ -25,7 +24,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'string|required',
-            'email' => ['required',new IsKBTCMail()],
+            'email' => ['required'],
             'password' => ['required',Password::defaults()],
             'confirmpassword' => 'same:password'
         ];

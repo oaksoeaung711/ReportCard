@@ -15,15 +15,23 @@
     </div>
     <div class="flex items-center flex-wrap gap-1">
         <span class="text-gray-700 text-sm">Permission : </span>
-        @foreach(auth()->user()->permissions as $permission)
-            @if($permission->id == 1)
-                <span class="px-1 bg-rose-300 rounded-full text-[9px] text-rose-700 tracking-tighter">{{ $permission->name }}</span>
-            @elseif($permission->id == 2)
-                <span class="px-1 bg-yellow-300 rounded-full text-[9px] text-xs text-yellow-700 tracking-tighter">{{ $permission->name }}</span>
-            @elseif($permission->id == 3)
-                <span class="px-1 bg-sky-300 rounded-full text-[9px] text-sky-700 tracking-tighter">{{ $permission->name }}</span>
-            @endif
-        @endforeach
+        @php
+            $permissions = collect(auth()->user()->permissions)->sortBy('id');
+            // dd(count($permissions));
+        @endphp
+        @if(count($permissions) != 0)
+            @foreach($permissions as $permission)
+                @if($permission->id == 1)
+                    <span class="px-1 bg-rose-300 rounded-full text-[9px] text-rose-700 tracking-tighter">{{ $permission->name }}</span>
+                @elseif($permission->id == 2)
+                    <span class="px-1 bg-yellow-300 rounded-full text-[9px] text-yellow-700 tracking-tighter">{{ $permission->name }}</span>
+                @elseif($permission->id == 3)
+                    <span class="px-1 bg-sky-300 rounded-full text-[9px] text-sky-700 tracking-tighter">{{ $permission->name }}</span>
+                @endif
+            @endforeach
+        @else
+            <span class="px-1 bg-gray-300 rounded-full text-[9px] text-gray-700 tracking-tighter">None</span>
+        @endif
     </div>
 </div>
 
@@ -36,7 +44,7 @@
             <span class="ml-3">Home</span>
         </a>
     </div>
-    @foreach(auth()->user()->permissions as $permission)
+    @foreach($permissions as $permission)
         @if($permission->id == 1)
             <div id="user-manage" class="flex items-center h-12 p-3 my-2 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
                 <a href="{{ route('users.index') }}" class="block w-full text-sm text-gray-700">
