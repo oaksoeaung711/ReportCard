@@ -23,7 +23,6 @@
             <hr class="my-6" />
         </div>
 
-
         <div class="col-span-2">
             <h1 class="text-lg text-gray-600 my-3">International School</h1>
 
@@ -34,10 +33,6 @@
     
                 <div class="flex items-center">
                     <a href="{{ route('reportcards.uploadmarks',['is','government']) }}" class="shadow w-full h-16 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-md text-gray-500">Government</a>
-                </div>
-
-                <div class="flex items-center">
-                    <a href="" class="shadow w-full h-16 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-md text-gray-500">Graduation</a>
                 </div>
             </div>
             <hr class="my-6" />

@@ -17,7 +17,6 @@
         <span class="text-gray-700 text-sm">Permission : </span>
         @php
             $permissions = collect(auth()->user()->permissions)->sortBy('id');
-            // dd(count($permissions));
         @endphp
         @if(count($permissions) != 0)
             @foreach($permissions as $permission)
@@ -38,7 +37,7 @@
 <hr class="border-gray-300 my-6" />
 
 <div>
-    <div id="home" class="flex items-center h-12 p-3 my-3 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
+    <div id="home" class="flex items-center h-12 p-3 my-2 hover:bg-gray-200 hover:rounded-md transition-all duration-200">
         <a href="{{ route('home') }}" class="block w-full text-sm text-gray-700">
             <i class="fa-solid fa-house-chimney"></i>
             <span class="ml-3">Home</span>

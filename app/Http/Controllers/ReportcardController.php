@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UploadMarkRequest;
 use App\Models\Sign;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use League\CommonMark\Node\Block\Document;
 use League\Csv\Reader;
 use League\Csv\Statement;
@@ -68,5 +69,10 @@ class ReportcardController extends Controller
             }
             return view('reportcards.isgovernment',compact('students','signs'));
         }
+    }
+
+    public function downloadExample($type)
+    {
+        return Storage::download("examples/$type");
     }
 }

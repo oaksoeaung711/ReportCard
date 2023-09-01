@@ -29,6 +29,7 @@ Route::middleware('auth','isverified')->group(function(){
         Route::get('/reportcards',[ReportcardController::class,'index'])->name('reportcards.index');
         Route::get('/reportcards/{place}/uploadmarks/{type}',[ReportcardController::class,'uploadmarks'])->name('reportcards.uploadmarks');
         Route::post('/reportcards/{place}/uploadmarks/{type}',[ReportcardController::class,'marks'])->name('reportcards.uploadmarks');
+        Route::get('/reportcards/examples/{type}',[ReportcardController::class,'downloadExample'])->name('example');
     });
 });
 
