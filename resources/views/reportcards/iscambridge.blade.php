@@ -186,8 +186,8 @@
                             {{-- ----- English ----- --}}
                             @if(!empty($english))
                                 <tr>
-                                    <td class="border h-10 border-gray-500 text-center">1</td>
-                                    <td class="border h-10 border-gray-500 pl-1">English</td>
+                                    <td class="border h-9 border-gray-500 text-center">1</td>
+                                    <td class="border h-9 border-gray-500 pl-1">English</td>
                                     @php
                                         $mark = "";
                                         if ($english['English'] > 80 && $english['English'] <= 100) {
@@ -205,21 +205,21 @@
                                     @endphp
                                     @foreach ($grades as $grade )
                                         @if($mark == $grade)
-                                            <td class="border h-10 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
                                         @else
-                                            <td class="border h-10 border-gray-500 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 text-center">{{ $grade }}</td>
                                         @endif
                                     @endforeach
                                 </tr>
                                 @foreach ($english as $description => $subject)
                                     <tr>
-                                        <td class="border h-10 border-gray-500"></td>
-                                        <td class="border h-10 border-gray-500 pl-1">{{ $description }}</td>
+                                        <td class="border h-9 border-gray-500"></td>
+                                        <td class="border h-9 border-gray-500 pl-1">{{ $description }}</td>
                                         @foreach($b_grades as $b_grade)
                                             @if($b_grade == $subject)
-                                                <td class="border h-10 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
+                                                <td class="border h-9 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
                                             @else
-                                                <td class="border h-10 border-gray-500 text-center">{{ $b_grade }}</td>
+                                                <td class="border h-9 border-gray-500 text-center">{{ $b_grade }}</td>
                                             @endif
                                         @endforeach
                                     </tr>
@@ -228,8 +228,8 @@
                             {{-- ----- Mathematics ----- --}}
                             @if(!empty($mathematics))
                                 <tr>
-                                    <td class="border h-10 border-gray-500 text-center">2</td>
-                                    <td class="border h-10 border-gray-500 pl-1">Mathematics</td>
+                                    <td class="border h-9 border-gray-500 text-center">2</td>
+                                    <td class="border h-9 border-gray-500 pl-1">Mathematics</td>
                                     @php
                                         $mark = "";
                                         if ($mathematics['Mathematics'] > 80 && $mathematics['Mathematics'] <= 100) {
@@ -247,21 +247,21 @@
                                     @endphp
                                     @foreach ($grades as $grade )
                                         @if($mark == $grade)
-                                            <td class="border h-10 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
                                         @else
-                                            <td class="border h-10 border-gray-500 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 text-center">{{ $grade }}</td>
                                         @endif
                                     @endforeach
                                 </tr>
                                 @foreach ($mathematics as $description => $subject)
                                     <tr>
-                                        <td class="border h-10 border-gray-500"></td>
-                                        <td class="border h-10 border-gray-500 pl-1">{{ $description }}</td>
+                                        <td class="border h-9 border-gray-500"></td>
+                                        <td class="border h-9 border-gray-500 pl-1">{{ $description }}</td>
                                         @foreach($b_grades as $b_grade)
                                             @if($b_grade == $subject)
-                                                <td class="border h-10 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
+                                                <td class="border h-9 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
                                             @else
-                                                <td class="border h-10 border-gray-500 text-center">{{ $b_grade }}</td>
+                                                <td class="border h-9 border-gray-500 text-center">{{ $b_grade }}</td>
                                             @endif
                                         @endforeach
                                     </tr>
@@ -270,8 +270,8 @@
                             {{-- ----- Science ----- --}}
                             @if(!empty($science))
                                 <tr>
-                                    <td class="border h-10 border-gray-500 text-center">3</td>
-                                    <td class="border h-10 border-gray-500 pl-1">Science</td>
+                                    <td class="border h-9 border-gray-500 text-center">3</td>
+                                    <td class="border h-9 border-gray-500 pl-1">Science</td>
                                     @php
                                         $mark = "";
                                         if ($science['Science'] > 80 && $science['Science'] <= 100) {
@@ -289,21 +289,21 @@
                                     @endphp
                                     @foreach ($grades as $grade )
                                         @if($mark == $grade)
-                                            <td class="border h-10 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
                                         @else
-                                            <td class="border h-10 border-gray-500 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 text-center">{{ $grade }}</td>
                                         @endif
                                     @endforeach
                                 </tr>
                                 @foreach ($science as $description => $subject)
                                     <tr>
-                                        <td class="border h-10 border-gray-500"></td>
-                                        <td class="border h-10 border-gray-500 pl-1">{{ $description }}</td>
+                                        <td class="border h-9 border-gray-500"></td>
+                                        <td class="border h-9 border-gray-500 pl-1">{{ $description }}</td>
                                         @foreach($b_grades as $b_grade)
                                             @if($b_grade == $subject)
-                                                <td class="border h-10 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
+                                                <td class="border h-9 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
                                             @else
-                                                <td class="border h-10 border-gray-500 text-center">{{ $b_grade }}</td>
+                                                <td class="border h-9 border-gray-500 text-center">{{ $b_grade }}</td>
                                             @endif
                                         @endforeach
                                     </tr>
@@ -312,8 +312,8 @@
                             {{-- ----- Chemistry ----- --}}
                             @if(!empty($chemistry))
                                 <tr>
-                                    <td class="border h-10 border-gray-500 text-center">3</td>
-                                    <td class="border h-10 border-gray-500 pl-1">Chemistry</td>
+                                    <td class="border h-9 border-gray-500 text-center">3</td>
+                                    <td class="border h-9 border-gray-500 pl-1">Chemistry</td>
                                     @php
                                         $mark = "";
                                         if ($chemistry['Chemistry'] > 80 && $chemistry['Chemistry'] <= 100) {
@@ -331,21 +331,21 @@
                                     @endphp
                                     @foreach ($grades as $grade )
                                         @if($mark == $grade)
-                                            <td class="border h-10 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
                                         @else
-                                            <td class="border h-10 border-gray-500 text-center">{{ $grade }}</td>
+                                            <td class="border h-9 border-gray-500 text-center">{{ $grade }}</td>
                                         @endif
                                     @endforeach
                                 </tr>
                                 @foreach ($chemistry as $description => $subject)
                                     <tr>
-                                        <td class="border h-10 border-gray-500"></td>
-                                        <td class="border h-10 border-gray-500 pl-1">{{ $description }}</td>
+                                        <td class="border h-9 border-gray-500"></td>
+                                        <td class="border h-9 border-gray-500 pl-1">{{ $description }}</td>
                                         @foreach($b_grades as $b_grade)
                                             @if($b_grade == $subject)
-                                                <td class="border h-10 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
+                                                <td class="border h-9 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
                                             @else
-                                                <td class="border h-10 border-gray-500 text-center">{{ $b_grade }}</td>
+                                                <td class="border h-9 border-gray-500 text-center">{{ $b_grade }}</td>
                                             @endif
                                         @endforeach
                                     </tr>
@@ -357,18 +357,18 @@
                     <table class="table h-fit">
                         <thead style="background-color: #00223d;">
                             <tr>
-                                <th class="border h-10 border-gray-500 text-white" colspan="2">Attendance</th>
+                                <th class="border h-9 border-gray-500 text-white" colspan="2">Attendance</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr style="background-color: #00223d;">
-                                <td class="border w-1/2 border-gray-500 text-center h-10 text-white">Month</td>
-                                <td class="border w-1/2 border-gray-500 text-center h-10 text-white">Percentage</td>
+                                <td class="border w-1/2 border-gray-500 text-center h-9 text-white">Month</td>
+                                <td class="border w-1/2 border-gray-500 text-center h-9 text-white">Percentage</td>
                             </tr>
                             @foreach ($months as $month => $attendance)
                                 <tr>
-                                    <td class="border border-gray-500 text-center h-10">{{ $month }}</td>
-                                    <td class="border border-gray-500 text-center h-10">{{ $attendance }}</td>
+                                    <td class="border border-gray-500 text-center h-9">{{ $month }}</td>
+                                    <td class="border border-gray-500 text-center h-9">{{ $attendance }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -384,8 +384,8 @@
                         {{-- ----- Social Studies ----- --}}
                         @if(!empty($social_studies))
                             <tr>
-                                <td class="border h-10 w-[10%] border-gray-500 text-center">4</td>
-                                <td class="border h-10 w-[45%] border-gray-500 pl-1">Social Studies</td>
+                                <td class="border h-9 w-[10%] border-gray-500 text-center">4</td>
+                                <td class="border h-9 w-[45%] border-gray-500 pl-1">Social Studies</td>
                                 @php
                                     $mark = "";
                                     if ($social_studies['Social Studies'] > 80 && $social_studies['Social Studies'] <= 100) {
@@ -403,21 +403,21 @@
                                 @endphp
                                 @foreach ($grades as $grade )
                                     @if($mark == $grade)
-                                        <td class="border h-10 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
+                                        <td class="border h-9 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
                                     @else
-                                        <td class="border h-10 border-gray-500 text-center">{{ $grade }}</td>
+                                        <td class="border h-9 border-gray-500 text-center">{{ $grade }}</td>
                                     @endif
                                 @endforeach
                             </tr>
                             @foreach ($social_studies as $description => $subject)
                                 <tr>
-                                    <td class="border h-10 w-[10%] border-gray-500"></td>
-                                    <td class="border h-10 w-[45%] border-gray-500 pl-1">{{ $description }}</td>
+                                    <td class="border h-9 w-[10%] border-gray-500"></td>
+                                    <td class="border h-9 w-[45%] border-gray-500 pl-1">{{ $description }}</td>
                                     @foreach($b_grades as $b_grade)
                                         @if($b_grade == $subject)
-                                            <td class="border h-10 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
+                                            <td class="border h-9 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
                                         @else
-                                            <td class="border h-10 border-gray-500 text-center">{{ $b_grade }}</td>
+                                            <td class="border h-9 border-gray-500 text-center">{{ $b_grade }}</td>
                                         @endif
                                     @endforeach
                                 </tr>
@@ -427,8 +427,8 @@
                         {{-- ----- Physics ----- --}}
                         @if(!empty($physics))
                             <tr>
-                                <td class="border h-10 w-[10%] border-gray-500 text-center">4</td>
-                                <td class="border h-10 w-[45%] border-gray-500 pl-1">Physics</td>
+                                <td class="border h-9 w-[10%] border-gray-500 text-center">4</td>
+                                <td class="border h-9 w-[45%] border-gray-500 pl-1">Physics</td>
                                 @php
                                     $mark = "";
                                     if ($physics['Physics'] > 80 && $physics['Physics'] <= 100) {
@@ -446,21 +446,21 @@
                                 @endphp
                                 @foreach ($grades as $grade )
                                     @if($mark == $grade)
-                                        <td class="border h-10 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
+                                        <td class="border h-9 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
                                     @else
-                                        <td class="border h-10 border-gray-500 text-center">{{ $grade }}</td>
+                                        <td class="border h-9 border-gray-500 text-center">{{ $grade }}</td>
                                     @endif
                                 @endforeach
                             </tr>
                             @foreach ($physics as $description => $subject)
                                 <tr>
-                                    <td class="border h-10 w-[10%] border-gray-500"></td>
-                                    <td class="border h-10 w-[45%] border-gray-500 pl-1">{{ $description }}</td>
+                                    <td class="border h-9 w-[10%] border-gray-500"></td>
+                                    <td class="border h-9 w-[45%] border-gray-500 pl-1">{{ $description }}</td>
                                     @foreach($b_grades as $b_grade)
                                         @if($b_grade == $subject)
-                                            <td class="border h-10 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
+                                            <td class="border h-9 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
                                         @else
-                                            <td class="border h-10 border-gray-500 text-center">{{ $b_grade }}</td>
+                                            <td class="border h-9 border-gray-500 text-center">{{ $b_grade }}</td>
                                         @endif
                                     @endforeach
                                 </tr>
@@ -470,8 +470,8 @@
                         {{-- ----- Biology ----- --}}
                         @if(!empty($biology))
                             <tr>
-                                <td class="border h-10 w-[10%] border-gray-500 text-center">5</td>
-                                <td class="border h-10 w-[45%] border-gray-500 pl-1">Biology</td>
+                                <td class="border h-9 w-[10%] border-gray-500 text-center">5</td>
+                                <td class="border h-9 w-[45%] border-gray-500 pl-1">Biology</td>
                                 @php
                                     $mark = "";
                                     if ($biology['Biology'] > 80 && $biology['Biology'] <= 100) {
@@ -489,21 +489,21 @@
                                 @endphp
                                 @foreach ($grades as $grade)
                                     @if($mark == $grade)
-                                        <td class="border h-10 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
+                                        <td class="border h-9 border-gray-500 bg-amber-400 text-center">{{ $grade }}</td>
                                     @else
-                                        <td class="border h-10 border-gray-500 text-center">{{ $grade }}</td>
+                                        <td class="border h-9 border-gray-500 text-center">{{ $grade }}</td>
                                     @endif
                                 @endforeach
                             </tr>
                             @foreach ($biology as $description => $subject)
                                 <tr>
-                                    <td class="border h-10 w-[10%] border-gray-500"></td>
-                                    <td class="border h-10 w-[45%] border-gray-500 pl-1">{{ $description }}</td>
+                                    <td class="border h-9 w-[10%] border-gray-500"></td>
+                                    <td class="border h-9 w-[45%] border-gray-500 pl-1">{{ $description }}</td>
                                     @foreach($b_grades as $b_grade)
                                         @if($b_grade == $subject)
-                                            <td class="border h-10 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
+                                            <td class="border h-9 border-gray-500 bg-green-500 text-center">{{ $subject }}</td>
                                         @else
-                                            <td class="border h-10 border-gray-500 text-center">{{ $b_grade }}</td>
+                                            <td class="border h-9 border-gray-500 text-center">{{ $b_grade }}</td>
                                         @endif
                                     @endforeach
                                 </tr>
@@ -516,18 +516,18 @@
                     <table class="table table-fixed h-fit">
                         <thead style="background-color: #00223d;">
                             <tr>
-                                <th class="border border-gray-500 h-10 text-white" colspan="2">Grading For Activities Subjects</th>
+                                <th class="border border-gray-500 h-9 text-white" colspan="2">Grading For Activities Subjects</th>
                             </tr>
                             <tr>
-                                <th class="border border-gray-500 h-10 text-white w-1/2">Subjects</th>
-                                <th class="border border-gray-500 h-10 text-white w-1/2">Grade</th>
+                                <th class="border border-gray-500 h-9 text-white w-1/2">Subjects</th>
+                                <th class="border border-gray-500 h-9 text-white w-1/2">Grade</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($activity as $activity_name => $activity_grade)
                                 <tr>
-                                    <td class="border border-gray-500 h-10 text-center">{{ $activity_name }}</td>
-                                    <td class="border border-gray-500 h-10 text-center">{{ $activity_grade }}</td>
+                                    <td class="border border-gray-500 h-9 text-center">{{ $activity_name }}</td>
+                                    <td class="border border-gray-500 h-9 text-center">{{ $activity_grade }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -540,18 +540,18 @@
                     <table class="table table-fit h-fit w-full">
                         <thead style="background-color: #00223d;">
                             <tr>
-                                <th colspan="{{ count($activity) }}" class="border border-gray-500 h-10 text-white">Grading For Activities Subjects</th>
+                                <th colspan="{{ count($activity) }}" class="border border-gray-500 h-9 text-white">Grading For Activities Subjects</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 @foreach ($activity as $activity_name => $activity_grade)
-                                    <td style="background-color: #00223d;" class="border border-gray-500 h-10 w-[14%] text-white text-center">{{ $activity_name }}</td>
+                                    <td style="background-color: #00223d;" class="border border-gray-500 h-9 w-[14%] text-white text-center">{{ $activity_name }}</td>
                                 @endforeach
                             </tr>
                             <tr>
                                 @foreach ($activity as $activity_name => $activity_grade)
-                                    <td class="border border-gray-500 h-10 w-[14%] text-center">{{ $activity_grade }}</td>
+                                    <td class="border border-gray-500 h-9 w-[14%] text-center">{{ $activity_grade }}</td>
                                 @endforeach
                             </tr>
                         </tbody>
@@ -563,18 +563,18 @@
                 <table class="table h-fit w-full">
                     <thead style="background-color: #00223d;">
                         <tr class="border border-gray-500">
-                            <th colspan="6" class="h-10 text-white">Grade for overall behaviour (A - Above 90, B - Between 80 and 90, C - Between 70 and 79, D - Between 60 and 69, E - Under 60)</th>
+                            <th colspan="6" class="h-9 text-white">Grade for overall behaviour (A - Above 90, B - Between 80 and 90, C - Between 70 and 79, D - Between 60 and 69, E - Under 60)</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($behaviour as $behaviour_name => $behaviour_grade )
                             <tr>
-                                <td class="border border-gray-500 h-10 w-3/4 pl-1">{{ $behaviour_name }}</td>
+                                <td class="border border-gray-500 h-9 w-3/4 pl-1">{{ $behaviour_name }}</td>
                                 @foreach ($grades as $grade)
                                     @if(trim($behaviour_grade) == $grade)
-                                        <td class="border border-gray-500 h-10 text-center bg-amber-400">{{ $behaviour_grade }}</td>
+                                        <td class="border border-gray-500 h-9 text-center bg-amber-400">{{ $behaviour_grade }}</td>
                                     @else
-                                        <td class="border border-gray-500 h-10 text-center">{{ $grade }}</td>
+                                        <td class="border border-gray-500 h-9 text-center">{{ $grade }}</td>
                                     @endif
                                 @endforeach
                             </tr>
