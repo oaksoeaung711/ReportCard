@@ -19,6 +19,10 @@
                 <div class="flex items-center">
                     <a href="{{ route('reportcards.uploadmarks',['preuni','50marks']) }}" class="shadow w-full h-16 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-md text-gray-500">50 Marks</a>
                 </div>
+
+                <div class="flex items-center">
+                    <a href="{{ route('reportcards.uploadmarks',['preuni','unigraduation']) }}" class="shadow w-full h-16 p-5 flex items-center rounded-md border hover:shadow-xl transition-all duration-500 text-md text-gray-500">Graduation</a>
+                </div>
             </div>
             <hr class="my-6" />
         </div>

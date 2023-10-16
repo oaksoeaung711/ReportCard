@@ -33,6 +33,8 @@ class ReportcardController extends Controller
             $formattype = 'Cambridge';
         }elseif($type == 'government'){
             $formattype = 'Government';
+        }elseif($type == 'unigraduation'){
+            $formattype = 'Graduation';
         }
         return view('reportcards.uploadmarks',compact('place','type','formatplace','formattype'));
     }
@@ -56,6 +58,12 @@ class ReportcardController extends Controller
                 array_shift($students[$record['Name']]);
             }
             return view('reportcards.preuni',compact('students','type','signs'));
+        }elseif($place == 'preuni' && $type == 'unigraduation'){
+            foreach($records as $record){
+                $students[$record['Name']] = $record;
+                array_shift($students[$record['Name']]);
+            }
+            return view('reportcards.preunigraduation',compact('students','type','signs'));
         }elseif($place == 'is' && $type == 'cambridge'){
             foreach($records as $record){
                 $students[$record['Name']] = $record;

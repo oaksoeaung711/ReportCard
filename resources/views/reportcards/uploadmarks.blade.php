@@ -14,6 +14,8 @@
                 $example = "cam_example.csv";
             }elseif($type == "government"){
                 $example = "gov_example.csv";
+            }elseif($type == 'unigraduation'){
+                $example = "uni_graduation_example.csv";
             }
         @endphp
 
