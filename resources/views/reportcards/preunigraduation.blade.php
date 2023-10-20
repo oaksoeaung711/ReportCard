@@ -58,20 +58,20 @@
                     <div class="row-start-4 space-y-4 text-[#A27433] text-center text-xl pt-14">
                         <p>has successfully completed the <span class="font-bold">Pre-IGCSE</span></p>
                         <p class="font-bold">(International General Certificate of Secondary Education)</p>
-                        <p>Program at KBTC Pre University in 2022-2023 Academic Year.</p>
+                        <p>Program at KBTC Pre University in <span>{{ $informations['AcademicYear'] }}</span> Academic Year.</p>
                     </div>
                 @elseif ($informations['Program'] == 'ncc')
                     <div class="row-start-4 space-y-1 text-[#A27433] text-center text-xl pt-14">
                         <p>has successfully completed the</p>
                         <p class="font-bold">NCC Education L3IFDHES (Level 3 International Foundation</p>
                         <p class="font-bold">Diploma for Higher Education Studies)</p>
-                        <p>Program at KBTC Pre University in 2022-2023 Academic Year.</p>
+                        <p>Program at KBTC Pre University in <span>{{ $informations['AcademicYear'] }}</span> Academic Year.</p>
                     </div>
                 @elseif ($informations['Program'] == 'ged')
                     <div class="row-start-4 space-y-4 text-[#A27433] text-center text-xl pt-14">
                         <p>has successfully completed the <span class="font-bold">GED</span></p>
                         <p class="font-bold">(General Educational Development)</p>
-                        <p>Program at KBTC Pre University in 2022-2023 Academic Year.</p>
+                        <p>Program at KBTC Pre University in <span>{{ $informations['AcademicYear'] }}</span> Academic Year.</p>
                     </div>
                 @endif
                 <div class="row-start-5 grid grid-cols-7">
